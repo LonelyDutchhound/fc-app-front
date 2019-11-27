@@ -1,0 +1,19 @@
+.welcome {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: darkslategray;
+  font: bold 2em "Open Sans", sans-serif;
+}
+a {
+  display: inline-block;
+  padding: 0.5%;
+  border: 2px solid darkslategray;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}

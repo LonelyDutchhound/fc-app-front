@@ -1,0 +1,33 @@
+header {
+  width: 100vw;
+  height: 60px;
+}
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+a {
+  display: flex;
+  flex-basis: 50%;
+  height: 58px;
+  justify-content: center;
+  align-items: center;
+  font: bold small-caps 2em "Open Sans", sans-serif;
+  color: darkslategray;
+  cursor: pointer;
+  text-decoration: none;
+}
+.study {
+  border-bottom: 2px solid darkslategray;
+  border-right: 2px solid darkslategray;
+  border-bottom-right-radius: 5px;
+}
+.collections {
+  border-bottom: 2px solid darkslategray;
+  border-left: 2px solid darkslategray;
+  border-bottom-left-radius: 5px;
+}
+
+
