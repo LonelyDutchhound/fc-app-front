@@ -1,0 +1,7 @@
+div {
+  width: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}

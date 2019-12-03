@@ -1,0 +1,20 @@
+div {
+  width: 45vw;
+  height: 2rem;
+  font: bold small-caps 1em "Open Sans", sans-serif;
+  color: darkslategray;
+  border-collapse: collapse;
+  border: 1px solid darkslategray;
+  border-radius: 4px;
+  margin: 2px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+span {
+  padding: 5px;
+  flex-shrink: 1;
+}
+.description {
+  flex-grow: 2;
+}

@@ -3,14 +3,17 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from '../header/header.component';
+import { HeaderComponent } from './header/header.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import { MainComponent } from '../main/main.component';
-import { WelcomeComponent } from '../welcome/welcome.component';
-import { StudyComponent } from '../study/study.component';
-import { CollectionsComponent } from '../collections/collections.component';
-import { PageNotFoundComponent } from '../not-found/page-not-found.component';
+import { MainComponent } from './main/main.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { StudyComponent } from './study/study.component';
+import { CollectionsComponent } from './collections/collections.component';
+import { PageNotFoundComponent } from './not-found/page-not-found.component';
+import { ListComponent } from './list/list.component';
+import { CollectionItemComponent } from './collection-item/collection-item.component';
+import { CardItemComponent } from './card-item/card-item.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { PageNotFoundComponent } from '../not-found/page-not-found.component';
     WelcomeComponent,
     StudyComponent,
     CollectionsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ListComponent,
+    CollectionItemComponent,
+    CardItemComponent
   ],
   imports: [
     BrowserModule,

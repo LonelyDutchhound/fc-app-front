@@ -1,0 +1,11 @@
+div {
+  width: 46vw;
+  height: 88vh;
+  border: 2px solid darkslategray;
+  border-radius: 5px;
+  margin: 20px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
