@@ -8,7 +8,8 @@ import {ITheme} from '../main/main.component';
 })
 export class ListComponent implements OnInit {
   @Input () themes: ITheme[];
-  constructor() { }
+
+  constructor() {  }
 
   ngOnInit() {
   }

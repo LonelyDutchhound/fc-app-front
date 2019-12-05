@@ -11,7 +11,7 @@ export interface ICard {
 
 export interface ITheme {
   _id: string;
-  name: string;
+  title: string;
   description: string;
 }
 
@@ -26,7 +26,7 @@ interface ICardQuery {
 const themeQuery = gql`{
     themes {
         _id
-        name
+        title
         description
     }
 }`;

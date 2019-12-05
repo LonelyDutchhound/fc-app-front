@@ -1,4 +1,4 @@
-div {
+ol {
   width: 46vw;
   height: 88vh;
   border: 2px solid darkslategray;
@@ -8,4 +8,7 @@ div {
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+
+  font: bold small-caps 1em "Open Sans", sans-serif;
+  color: darkslategray;
 }

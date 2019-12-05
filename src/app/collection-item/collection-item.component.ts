@@ -8,7 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CollectionItemComponent implements OnInit {
   @Input () theme;
   @Input() index;
-  constructor() { }
+
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }

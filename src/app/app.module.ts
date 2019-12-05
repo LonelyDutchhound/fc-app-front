@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,7 +14,7 @@ import { CollectionsComponent } from './collections/collections.component';
 import { PageNotFoundComponent } from './not-found/page-not-found.component';
 import { ListComponent } from './list/list.component';
 import { CollectionItemComponent } from './collection-item/collection-item.component';
-import { CardItemComponent } from './card-item/card-item.component';
+import { ItemComponent } from './item/item.component';
 
 
 @NgModule({
@@ -27,12 +28,14 @@ import { CardItemComponent } from './card-item/card-item.component';
     PageNotFoundComponent,
     ListComponent,
     CollectionItemComponent,
-    CardItemComponent
+    ItemComponent
   ],
   imports: [
     BrowserModule,
     GraphQLModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'study', component: StudyComponent },
       { path: 'collections', component: CollectionsComponent },

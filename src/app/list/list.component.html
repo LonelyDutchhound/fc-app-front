@@ -1,5 +1,7 @@
-<div>
-  <app-collection-item *ngFor="let theme of themes; let i = index"
-  [theme]="theme"
-  [index]="i"></app-collection-item>
-</div>
+<ol>
+  <app-item *ngFor="let theme of themes; let i = index"
+    [item]="theme"
+    [index]="i"
+  >
+  </app-item>
+</ol>
