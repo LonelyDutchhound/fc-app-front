@@ -1,7 +1,22 @@
 div {
-  width: 100vw;
+  width: 84vw;
+  margin: auto;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+}
+ol {
+  width: 41vw;
+  height: 88vh;
+  border: 2px solid darkslategray;
+  border-radius: 5px;
+  margin: 20px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  font: bold small-caps 1em "Open Sans", sans-serif;
+  color: darkslategray;
 }

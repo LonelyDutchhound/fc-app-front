@@ -1,4 +1,18 @@
 <div>
-  <app-list [themes]="themes"></app-list>
-  <app-list></app-list>
+  <ol>
+    <app-collection-item *ngFor="let theme of themes; let i = index"
+              [item]="theme"
+              [index]="i"
+              (setCurrentCollection)="onSetCurrentCollection($event)"
+    >
+    </app-collection-item>
+  </ol>
+  <ol>
+    <app-card-item *ngFor="let card of cards; let i = index"
+              [item]="card"
+              [index]="i"
+                   >
+
+    </app-card-item>
+  </ol>
 </div>

@@ -1,20 +1,61 @@
-div {
-  width: 45vw;
-  height: 2rem;
-  font: bold small-caps 1em "Open Sans", sans-serif;
-  color: darkslategray;
+.item {
+  width: 40vw;
   border-collapse: collapse;
   border: 1px solid darkslategray;
   border-radius: 4px;
   margin: 2px;
   display: flex;
+  flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
+  font: bold small-caps 1em "Open Sans", sans-serif;
+  color: darkslategray;
 }
-span {
-  padding: 5px;
+.item__data {
+  width: 95%;
+  display: flex;
+  flex-flow: row wrap;
+}
+.item__count {
+  width: 5%;
+  padding: 8px;
+}
+.item__select-block {
+  flex-basis: 70%;
   flex-shrink: 1;
+  flex-grow: 80;  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
 }
-.description {
-  flex-grow: 2;
+.item__btn-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+.item__info-field {
+  width: 100%;
+  background: white;
+  border: none;
+  text-transform: uppercase;
+}
+.item__btn {
+  width: 90%;
+  border-collapse: collapse;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+  margin: 5px;
+  color: #ffffff;
+  background: darkslategray;
+}
+.item__btn:focus, .item__btn:active {
+  outline: none;
+}
+.item__select-block {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
 }

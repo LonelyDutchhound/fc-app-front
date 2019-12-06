@@ -2,26 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { Subscription } from 'rxjs';
-
-export interface ICard {
-  id: string;
-  title: string;
-  description: string;
-}
-
-export interface ITheme {
-  _id: string;
-  title: string;
-  description: string;
-}
-
-interface IThemeQuery {
-  themes: ITheme[];
-}
-
-interface ICardQuery {
-  cards: ICard[];
-}
+import { ICard, ICardQuery, ITheme, IThemeQuery } from '../../interfaces';
 
 const themeQuery = gql`{
     themes {
@@ -31,14 +12,16 @@ const themeQuery = gql`{
     }
 }`;
 
-const cardQuery = gql`{
-    cards {
-        _id
-        title
-        description
-        theme
+const cardQuery = gql`
+    query cardQuery($themeId: String!) {
+        cards(theme: $themeId) {
+          _id
+          title
+          description
+          theme
+        }
     }
-}`;
+`;
 
 @Component({
   selector: 'app-main',
@@ -49,6 +32,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   loading: boolean;
   themes: ITheme[];
+  private _currentCollection: string;
   cards: ICard[];
   private querySubscription: Subscription;
 
@@ -64,9 +48,25 @@ export class MainComponent implements OnInit, OnDestroy {
         this.loading = loading;
         this.themes = data.themes;
       });
+    this._currentCollection = '';
   }
 
   ngOnDestroy(): void {
     this.querySubscription.unsubscribe();
+  }
+
+  async onSetCurrentCollection(themeId) {
+    this._currentCollection = themeId;
+    console.log(cardQuery);
+    this.querySubscription = this.apollo
+      .watchQuery<ICardQuery>({
+        query: cardQuery,
+        variables: { themeId }
+      })
+      .valueChanges.subscribe(({ data, loading }) => {
+        console.log(data);
+        this.loading = loading;
+        this.cards = data.cards;
+      });
   }
 }

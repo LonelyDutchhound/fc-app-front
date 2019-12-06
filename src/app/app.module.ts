@@ -12,10 +12,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { StudyComponent } from './study/study.component';
 import { CollectionsComponent } from './collections/collections.component';
 import { PageNotFoundComponent } from './not-found/page-not-found.component';
-import { ListComponent } from './list/list.component';
 import { CollectionItemComponent } from './collection-item/collection-item.component';
-import { ItemComponent } from './item/item.component';
-
+import { CardItemComponent } from './card-item/card-item.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +24,8 @@ import { ItemComponent } from './item/item.component';
     StudyComponent,
     CollectionsComponent,
     PageNotFoundComponent,
-    ListComponent,
     CollectionItemComponent,
-    ItemComponent
+    CardItemComponent,
   ],
   imports: [
     BrowserModule,
