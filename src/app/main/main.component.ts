@@ -3,6 +3,8 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { Subscription } from 'rxjs';
 import { ICard, ICardQuery, ITheme, IThemeQuery } from '../../interfaces';
+import { FormControl, FormGroup } from '@angular/forms';
+import { log } from 'util';
 
 const themeQuery = gql`{
     themes {
@@ -30,16 +32,20 @@ const cardQuery = gql`
 })
 export class MainComponent implements OnInit, OnDestroy {
 
+  private querySubscription: Subscription;
+  currentCollection: string;
+
+  addForm: FormGroup;
   loading: boolean;
   themes: ITheme[];
-  private _currentCollection: string;
   cards: ICard[];
-  private querySubscription: Subscription;
+  isItemAdded: boolean;
 
   constructor(private apollo: Apollo) {
   }
 
   ngOnInit() {
+    this.loading = true;
     this.querySubscription = this.apollo
       .watchQuery<IThemeQuery>({
         query: themeQuery
@@ -48,15 +54,20 @@ export class MainComponent implements OnInit, OnDestroy {
         this.loading = loading;
         this.themes = data.themes;
       });
-    this._currentCollection = '';
+    this.addForm = new FormGroup({
+      title: new FormControl(),
+      description: new FormControl(),
+      theme: new FormControl()
+    });
   }
 
   ngOnDestroy(): void {
     this.querySubscription.unsubscribe();
   }
 
-  async onSetCurrentCollection(themeId) {
-    this._currentCollection = themeId;
+  onSetCurrentCollection(themeId) {
+    this.loading = true;
+    this.currentCollection = themeId;
     console.log(cardQuery);
     this.querySubscription = this.apollo
       .watchQuery<ICardQuery>({
@@ -68,5 +79,15 @@ export class MainComponent implements OnInit, OnDestroy {
         this.loading = loading;
         this.cards = data.cards;
       });
+  }
+
+  onItemAdding() {
+    this.isItemAdded = !this.isItemAdded;
+  }
+
+  onSubmit() {
+    console.log(this.currentCollection)
+    this.isItemAdded = !this.isItemAdded;
+    console.log(this.addForm);
   }
 }

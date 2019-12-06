@@ -1,18 +1,30 @@
-<div>
-  <ol>
+<div class="container">
+  <div class="item__list">
     <app-collection-item *ngFor="let theme of themes; let i = index"
               [item]="theme"
               [index]="i"
               (setCurrentCollection)="onSetCurrentCollection($event)"
     >
     </app-collection-item>
-  </ol>
-  <ol>
+  </div>
+  <div class="item__list">
     <app-card-item *ngFor="let card of cards; let i = index"
               [item]="card"
               [index]="i"
                    >
 
     </app-card-item>
-  </ol>
+    <button *ngIf="currentCollection&&!loading&&!isItemAdded" class="list__btn" (click)="onItemAdding()">Add Card</button>
+    <form class="item" *ngIf="isItemAdded" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <label>
+        Term:
+        <input class="add-item__info-field" type="text" formControlName="title" />
+      </label>
+      <label>
+        Description:
+        <input class="add-item__info-field" type="textarea" maxlength="1000" formControlName="description" />
+      </label>
+        <button class="item__btn add-btn" type="submit">Add Card</button>
+    </form>
+  </div>
 </div>

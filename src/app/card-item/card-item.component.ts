@@ -37,11 +37,15 @@ export class CardItemComponent implements OnInit {
 
   }
 
-  onSelectCard() {
+  onEdit() {
 
   }
 
-  onEdit() {
+  onDelete() {
+
+  }
+
+  onSelectCard() {
 
   }
 }

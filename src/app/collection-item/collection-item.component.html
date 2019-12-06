@@ -2,16 +2,16 @@
   <div class="item__count">{{index+1}}</div>
   <form class="item__data" [formGroup]="itemForm" (ngSubmit)="onSubmit()">
     <label class="item__select-block"
-      [for]="item._id"
-      (click)="onSelectCollection()"
+           [for]="item._id"
+           (click)="onSelectCollection()"
     >
       <input class="item__info-field" type="text"
-        [disabled]="!isEdited"
-        [value]="item.title"
+            [disabled]="!isEdited"
+            [value]="item.title"
       />
       <input class="item__info-field" type="textarea"
-        [disabled]="!isEdited"
-        [value]="item.description"
+            [disabled]="!isEdited"
+            [value]="item.description"
       />
       <input type="hidden" name="id" value="item._id">
     </label>
